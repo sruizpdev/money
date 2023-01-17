@@ -1,7 +1,9 @@
 import {View, Text, Pressable, TextInput, StyleSheet} from 'react-native';
-import {useState} from 'react';
-const NuevoPresupuesto = ({handleNuevoPresupuesto}) => {
-  const [presupuesto, setPresupuesto] = useState(0);
+
+import globalStyles from '../styles';
+
+const NuevoPresupuesto = ({presupuesto, setPresupuesto,handleNuevoPresupuesto}) => {
+  
   return (
     <View style={styles.contenedor}>
       <Text style={styles.label}>Definir presupuesto</Text>
@@ -23,12 +25,7 @@ const NuevoPresupuesto = ({handleNuevoPresupuesto}) => {
 
 const styles = StyleSheet.create({
   contenedor: {
-    backgroundColor: '#fff',
-    marginHorizontal: 10,
-    borderRadius: 10,
-    paddingHorizontal: 20,
-    paddingVertical: 40,
-    transform: [{translateY: 50}],
+    ...globalStyles.contenedor,
   },
   label: {
     textAlign: 'center',
