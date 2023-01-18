@@ -7,6 +7,7 @@ import {
   Pressable,
   StyleSheet,
 } from 'react-native';
+import {Picker} from '@react-native-picker/picker';
 
 const FormularioGasto = () => {
   return (
@@ -28,6 +29,14 @@ const FormularioGasto = () => {
             placeholder="Introduce la cantidad del gasto. Ej. 300"
             keyboardType="numeric"
           />
+        </View>
+        <View>
+          <Text>Categoría gasto</Text>
+          <Picker>
+            <Picker.Item label="--Seleccione" value="0" />
+            <Picker.Item label="--Seleccione" value="0" />
+            <Picker.Item label="--Seleccione" value="0" />
+          </Picker>
         </View>
       </View>
     </SafeAreaView>
