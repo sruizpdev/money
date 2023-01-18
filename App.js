@@ -8,11 +8,7 @@ const App = () => {
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false);
   const [presupuesto, setPresupuesto] = useState(0);
 
-  const [gastos, setGastos] = useState([
-    {id: 1, total: 30},
-    {id: 2, total: 40},
-    {id: 3, total: 50},
-  ]);
+  const [gastos, setGastos] = useState([]);
   const handleNuevoPresupuesto = presupuesto => {
     if (Number(presupuesto) > 0) {
       setIsValidPresupuesto(true);

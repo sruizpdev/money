@@ -7,7 +7,17 @@ const ControlPresupuesto = ({presupuesto, gastos}) => {
   const [disponible, setDisponible] = useState(0);
   const [gastado, setGastado] = useState(0);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log(gastos);
+    const totalGastado = gastos.reduce((total, gasto) => 
+      Number(gasto.cantidad) + total, 0);
+      const totalDisponible = presupuesto - totalGastado;
+      setDisponible(totalDisponible);
+      setGastado(totalGastado);
+      console.log(totalGastado);
+      console.log(totalDisponible);
+   
+  }, []);
 
   return (
     <View style={styles.contenedor}>
