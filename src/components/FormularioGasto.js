@@ -14,8 +14,8 @@ const FormularioGasto = () => {
   return (
     <SafeAreaView style={styles.contenedor}>
       <View>
-        <Pressable>
-          <Text>Cancelar</Text>
+        <Pressable style={styles.btnCancelar}>
+          <Text style={styles.btnCancelarTexto}>Cancelar</Text>
         </Pressable>
       </View>
       <View style={styles.formulario}>
@@ -89,6 +89,18 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     textTransform: 'uppercase',
+  },
+  btnCancelar: {
+    backgroundColor: '#db2777',
+    padding: 10,
+    marginTop: 30,
+    marginHorizontal: 10,
+  },
+  btnCancelarTexto: {
+    textTransform: 'uppercase',
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
   },
 });
 
