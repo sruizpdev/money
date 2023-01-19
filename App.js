@@ -24,7 +24,9 @@ const App = () => {
       Alert.alert('Error', 'Todos los campos son obligatorios', [{text: 'OK'}]);
       return;
     }
-    
+    gasto.id = Date.now();
+    setGastos([...gastos, gasto]);
+    setModal(!modal);
   };
   return (
     <View style={styles.contenedor}>
