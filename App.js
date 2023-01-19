@@ -18,6 +18,14 @@ const App = () => {
       Alert.alert('Error', 'El presupuesto no puede ser 0 o menor', 'OK');
     }
   };
+
+  const handleGasto = gasto => {
+    if (Object.values(gasto).includes('')) {
+      Alert.alert('Error', 'Todos los campos son obligatorios', [{text: 'OK'}]);
+      return;
+    }
+    
+  };
   return (
     <View style={styles.contenedor}>
       <View style={styles.header}>
@@ -33,8 +41,11 @@ const App = () => {
         )}
       </View>
       {modal && (
-        <Modal animationType="slide" visible={modal}>
-          <FormularioGasto />
+        <Modal
+          animationType="slide"
+          visible={modal}
+          onRequestClose={() => setModal(!modal)}>
+          <FormularioGasto setModal={setModal} handleGasto={handleGasto} />
         </Modal>
       )}
       {isValidPresupuesto && (
